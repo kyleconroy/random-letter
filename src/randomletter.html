@@ -4,14 +4,20 @@
     <meta charset="utf-8">
     <link href="style.css" rel="stylesheet" type="text/css">
     <script type="text/javascript">
-var loadLetter = function loadLetter() {
-  return;
-  container = document.getElementById("letter");
-  container.innerHTML = "H";
+function getRandomInt(min, max) {  
+  return Math.floor(Math.random() * (max - min + 1)) + min;  
 }
 
-var reloadLetter = function reloadLetter() {
+function loadLetter() {
+  container = document.getElementById("letter");
+  alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  index = getRandomInt(0, alpha.length - 1);
+  container.data = alpha[index] + ".svg";
+  container.appendChild(document.createElement("span"));
+}
 
+function reloadLetter() {
+  loadLetter();
 }
     </script>
   </head>
@@ -19,13 +25,13 @@ var reloadLetter = function reloadLetter() {
     <header>
       <h1>Random Letter</h1>
     </header>
-    <div id="letter">
-      <object type="image/svg+xml" data="A.svg">
+    <div>
+      <object id="letter" type="image/svg+xml" data="A.svg">
         <span/>
       </object>
     </div>
     <footer>
-      <button type="button">
+      <button type="button" onclick="reloadLetter()">
         <img id="refresh" src="refresh.png" />
       </button>
     </footer>
