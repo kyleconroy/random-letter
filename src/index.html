@@ -2,6 +2,8 @@
 <html lang="en" manifest="letter.appcache">
   <head>
     <meta charset="utf-8">
+    <meta name=apple-mobile-web-app-capable content=yes>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
     <link href="style.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="letter.js"></script>
   </head>
@@ -10,7 +12,7 @@
       <h1>Random Letter</h1>
     </header>
     <div>
-      <object id="letter" type="image/svg+xml">
+      <object id="letter" type="image/svg+xml" data="A.svg">
         <span/>
       </object>
     </div>
